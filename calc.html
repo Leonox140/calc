@@ -1,56 +1,69 @@
-<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset='utf-8' lang='pt-br'>
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>Contatos</title>
+        <meta name="calculadora" content="calculadora">
         <link rel="stylesheet" href="style.css">
-        <script src="_js/calc.js"></script>
-    </head>
-    <body>
-        <div>
-            <h1 id='title'>Calculadora</h1>
-            <div class='main'>
-                <form name='form'> 
-                    <input class="textview" name='textview'> 
-                </form>                  
-                    <table>
-                        <td>
-                            <input type="button" class='button' onclick='c()' value="C">
-                            <input type="button" class='button' onclick="back()" value="<">
-                            <input type="button" class='button' onclick="insert('/')" value="/">
-                            <input type="button" class='button' onclick="insert('*')" value="*">
-                        </td>
-                        <tr>
-                            <td>
-                                <input type="button" class='button' onclick="insert(7)" value="7">
-                                <input type="button" class='button' onclick="insert(8)" value="8">
-                                <input type="button" class='button' onclick="insert(9)" value="9">
-                                <input type="button" class='button' onclick="insert('+')" value="+">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="button" class='button' onclick="insert(4)" value="4">
-                                <input type="button" class='button' onclick="insert(5)" value="5">
-                                <input type="button" class='button' onclick="insert(6)" value="6">
-                                <input type="button" class='button' onclick="insert('-')" value="-">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="button" class='button' onclick="insert(1)" value="1">
-                                <input type="button" class='button' onclick="insert(2)" value="2">
-                                <input type="button" class='button' onclick="insert(3)" value="3">
-                                <input type="button" class='button' onclick='equal()' value="=">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="hidden">
-                                <input type='button' value='0' onclick="insert(0)" class='button' id='n0'>
-                                <input type='button' value='.' onclick="insert('.')" class='button' id='n0'>
-                            </td>
-                        </tr>
-                </form>               
-            </div>
-        </div>
-    </body>
+   <head>
+        <script> 
+          
+         function dis(val) 
+         { 
+             document.getElementById("result").value+=val 
+         } 
+           
+         function solve() 
+         { 
+             let x = document.getElementById("result").value 
+             let y = eval(x) 
+             document.getElementById("result").value = y 
+         } 
+           
+          
+         function clr() 
+         { 
+             document.getElementById("result").value = "" 
+         } 
+      </script>
+
+   </head> 
+   <!-- create table -->
+   <body> 
+      <div class = title >CALCULADORA</div> 
+      <table border="1"> 
+         <tr> 
+            <td colspan="3"><input type="text" id="result"/></td> 
+            <td><input type="button" value="c" onclick="clr()"/> </td> 
+         </tr> 
+         <tr> 
+
+            <td><input type="button" value="1" onclick="dis('1')"/> </td> 
+            <td><input type="button" value="2" onclick="dis('2')"/> </td> 
+            <td><input type="button" value="3" onclick="dis('3')"/> </td> 
+            <td><input type="button" value="/" onclick="dis('/')"/> </td> 
+         </tr> 
+         <tr> 
+            <td><input type="button" value="4" onclick="dis('4')"/> </td> 
+            <td><input type="button" value="5" onclick="dis('5')"/> </td> 
+            <td><input type="button" value="6" onclick="dis('6')"/> </td> 
+            <td><input type="button" value="-" onclick="dis('-')"/> </td> 
+         </tr> 
+         <tr> 
+            <td><input type="button" value="7" onclick="dis('7')"/> </td> 
+            <td><input type="button" value="8" onclick="dis('8')"/> </td> 
+            <td><input type="button" value="9" onclick="dis('9')"/> </td> 
+            <td><input type="button" value="+" onclick="dis('+')"/> </td> 
+         </tr> 
+         <tr> 
+            <td><input type="button" value="." onclick="dis('.')"/> </td> 
+            <td><input type="button" value="0" onclick="dis('0')"/> </td> 
+            <!-- solve function call function solve to evaluate value -->
+            <td><input type="button" value="=" onclick="solve()"/> </td> 
+            <td><input type="button" value="*" onclick="dis('*')"/> </td> 
+         </tr> 
+      </table> 
+   </body> 
+</html>    
